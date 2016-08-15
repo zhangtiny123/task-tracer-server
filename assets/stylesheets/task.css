@@ -222,3 +222,11 @@ table {
   max-height: 200px;
   overflow: scroll;
 }
+
+.without-information_panel {
+  display: none;
+}
+
+.fulfill-page {
+  width: 100% !important;
+}

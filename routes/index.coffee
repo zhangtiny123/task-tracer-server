@@ -26,7 +26,7 @@ router.get '/tasks/:name',(req,res) ->
     return
   jwt.verify req.query.accessToken, jwtCfg.browserToken.secret, (jwterr, payload) ->
     if payload?.type == 'browser_token'
-      res.render 'task',name: req.params.name
+      res.render 'task',name: req.params.name, fromIframe: req.query.is_iframe
     else if jwterr?.name == 'TokenExpiredError'
       res.render 'error',message: 'accessToken expired'
     else

@@ -9,7 +9,9 @@ html
     link(rel="stylesheet",href="/assets/stylesheets/toastr.css")
     block css
   body
-    .container.marketing
+    - var calling_from_iframe = fromIframe != undefined
+    - var extra_klass = calling_from_iframe? 'fulfill-page' : ""
+    .container.marketing(class=extra_klass)
       block content
 
     block js

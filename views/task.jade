@@ -2,8 +2,9 @@ extends ./layout
 block css
   link(rel="stylesheet",href="/assets/stylesheets/task.css")
 
-block content 
-  .row
+block content
+  - var klass = (fromIframe == undefined) ? '' : 'without-information_panel'
+  .row(class=klass)
     .col-lg-12
       .panel.panel-default
         .panel-heading task information
@@ -21,7 +22,7 @@ block content
               td.tsourceNum 0
           hr
           ul.list-inline.workers-list
-          
+
   .terminals
 
   .modal.fade#myModal(tabindex='-1',role='dialog')
